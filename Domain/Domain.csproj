@@ -11,4 +11,8 @@
     <DocumentationFile>bin\Debug\netcoreapp2.0\Matrix.xml</DocumentationFile>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
 </Project>
