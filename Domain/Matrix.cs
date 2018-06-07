@@ -29,12 +29,12 @@ namespace Domain
         /// <param name="matrix1">The matrix1.</param>
         /// <param name="matrix2">The matrix2.</param>
         /// <returns>The result of the operator.</returns>
-        /// <exception cref="MatrixDimensionMistmatchException">-</exception>
+        /// <exception cref="MatrixDimensionMismatchException">-</exception>
         public static Matrix operator -(Matrix matrix1, Matrix matrix2)
         {
             if (!(matrix1.RowCount == matrix2.RowCount && matrix1.ColumnCount == matrix2.ColumnCount))
             {
-                throw new MatrixDimensionMistmatchException(matrix1, matrix2, "-");
+                throw new MatrixDimensionMismatchException(matrix1, matrix2, "-");
             }
             return matrix1 + (-1 * matrix2);
         }
@@ -69,12 +69,12 @@ namespace Domain
         /// <param name="matrix1">The matrix1.</param>
         /// <param name="matrix2">The matrix2.</param>
         /// <returns>The result of the operator.</returns>
-        /// <exception cref="MatrixDimensionMistmatchException"></exception>
+        /// <exception cref="MatrixDimensionMismatchException"></exception>
         public static Matrix operator *(Matrix matrix1, Matrix matrix2)
         {
             if (matrix1.ColumnCount != matrix2.RowCount)
             {
-                throw new MatrixDimensionMistmatchException(matrix1, matrix2, "multiplication");
+                throw new MatrixDimensionMismatchException(matrix1, matrix2, "multiplication");
             }
             var newMatrixValues = new int[matrix1.RowCount, matrix2.ColumnCount];
 
@@ -99,12 +99,12 @@ namespace Domain
         /// <param name="matrix1">The matrix1.</param>
         /// <param name="matrix2">The matrix2.</param>
         /// <returns>The result of the operator.</returns>
-        /// <exception cref="MatrixDimensionMistmatchException"></exception>
+        /// <exception cref="MatrixDimensionMismatchException"></exception>
         public static Matrix operator +(Matrix matrix1, Matrix matrix2)
         {
             if (!(matrix1.RowCount == matrix2.RowCount && matrix1.ColumnCount == matrix2.ColumnCount))
             {
-                throw new MatrixDimensionMistmatchException(matrix1, matrix2, "summ");
+                throw new MatrixDimensionMismatchException(matrix1, matrix2, "summ");
             }
             var newMatrixValues = new int[matrix1.RowCount, matrix2.ColumnCount];
 
